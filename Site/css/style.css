@@ -165,31 +165,29 @@ button:hover{
     position: relative;
     min-height: 100vh;
     color: #FFFFFF;
+    padding-top: 10%;
 }
 .aboutUs .container{
     width: 60%;
     float: right;
     margin-left: -10%;
 }
-.aboutUs h1{
-    padding: 10%;
-    text-align: center;
-    font-weight: lighter;
-    color:#FFFFFF;
-    text-transform: uppercase;
-    margin-left: 10%;
-}
 
-.aboutUs p{
-    margin-left: 10%;
-    text-align: justify;
-    padding: 15% 10%;
-    font-size: 20px;
+.aboutUs .general-title{
+    margin-left: 40%;
+    float: left;
+    color: #FFFFFF;
 }
 .aboutUs .destaque{
     text-align: center;
     margin-top: -25%;
     font-weight: 500;
+}
+.aboutUs p{
+    margin-left: 10%;
+    text-align: justify;
+    padding: 15% 10%;
+    font-size: 20px;
 }
 .aboutUs .imgContent{
     position: absolute;
@@ -232,6 +230,47 @@ button:hover{
     color: #FFFFFF;
 }
 
+.paletColor button{
+    width: 300px;
+    padding: 15px 0;
+    text-align: center;
+    margin: auto;
+    border-radius: 25px;
+    font-weight: bold;
+    border:  2px solid black;
+    background: #D87501;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.paletColor  span{
+    height: 100%;
+    width: 0%;
+    background: #FFC13C;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+    color: black;
+}
+
+.paletColor  button:hover span{
+    width: 100%;
+    color: black;
+}
+
+.paletColor  button:hover{
+    border: none;
+    color: black;
+    background: #FFC13C;
+}
+
 .paletColor .container{
     display: flex;
     flex-direction: column;
@@ -239,7 +278,9 @@ button:hover{
     padding: 10% 10%;
     
 }
-
+.paletColor .cards{
+    margin-bottom: 5%;
+}
 .box{
     align-items: center;
     margin-top: 5%;
@@ -287,4 +328,42 @@ button:hover{
     text-align: center;
     margin-top: 10px;
     border: none;
+}
+
+.contact{
+    max-width: 100%;
+    background-color: #FFFFFF;
+    position: relative;
+    min-height: 100vh;
+    color: #FFFFFF;
+}
+
+.contact .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10% 0%;
+}
+
+.contact .general-title{
+    margin-left: 50%;
+    float: left;
+}
+
+.contact .imgContent{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.contact .imgContent img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
 }
