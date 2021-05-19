@@ -1,0 +1,455 @@
+:root {
+    --cor-rose: #FFC13C;
+    --cor-rose-escuro: #FFC13C;
+    --cor-cinza-escuro: #0f0f0f;
+    --cor-cinza-claro: #969989;
+    --cor-branco: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 200vh;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #D87501;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: #D87501;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFC13C;
+}
+
+.header {
+    min-width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    background-clip: padding-box;
+    background-color: #C5C6C1;
+    background-image: url(../img/pexels-koolshooters-6977374.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 20px;
+    z-index: 5;
+    transition: 0.4s;
+}
+
+.logo {
+    width: 160px;
+    font-size: 35px;
+    cursor: pointer;
+    margin-right: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    color: var(--cor-branco);
+    font-weight: lighter;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 25px 10px;
+    font-size: 18px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--cor-branco);
+    text-transform: uppercase;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+    background-color: var(--cor-rose-escuro);
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: var(--cor-branco);
+}
+
+.content h3 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 200;
+    line-height: 25px;
+}
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #FFFFFF;
+    background: transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    height: 100%;
+    width: 0;
+    background: #FFC13C;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+    color: black;
+}
+
+button:hover span {
+    width: 100%;
+    color: black;
+}
+
+button:hover {
+    border: none;
+    color: black;
+}
+
+.aboutUs {
+    width: 100%;
+    background-color: #D87501;
+    position: relative;
+    min-height: 100vh;
+    color: #FFFFFF;
+    padding-top: 10%;
+}
+
+.aboutUs .container {
+    width: 60%;
+    float: right;
+    margin-left: -10%;
+}
+
+.aboutUs .general-title {
+    margin-left: 40%;
+    float: left;
+    color: #FFFFFF;
+}
+
+.aboutUs .destaque {
+    text-align: center;
+    margin-top: -25%;
+    font-weight: 500;
+}
+
+.aboutUs p {
+    margin-left: 10%;
+    text-align: justify;
+    padding: 15% 10%;
+    font-size: 20px;
+}
+
+.aboutUs .imgContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    border-radius: 50px;
+    float: left;
+}
+
+.aboutUs .imgContent img {
+    padding: 30% 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 83px;
+}
+
+.aboutUs .container {
+    float: right;
+}
+
+.aboutUs .detalhe {
+    height: 3px;
+    border-radius: 20px;
+    border: none;
+    width: 20%;
+    background-color: #FFC13C;
+    margin-top: -8%;
+    margin-left: 45%;
+}
+
+.paletColor {
+    width: 100%;
+    background-color: #FFFFFF;
+    position: relative;
+    min-height: 100vh;
+    color: #FFFFFF;
+}
+
+.paletColor button {
+    width: 300px;
+    padding: 15px 0;
+    text-align: center;
+    margin: auto;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #FFC13C;
+    background: #D87501;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.paletColor .img_palet {
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    text-align: center;
+    width: 185px;
+    height: 200px;
+}
+
+.paletColor span {
+    height: 100%;
+    width: 0%;
+    background: #FFC13C;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+    color: black;
+}
+
+.paletColor button:hover span {
+    width: 100%;
+    color: black;
+}
+
+.paletColor button:hover {
+    border: none;
+    color: black;
+    background: #FFC13C;
+}
+
+.paletColor .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10% 10%;
+}
+
+.paletColor .cards {
+    margin-bottom: 5%;
+}
+
+.box {
+    border-radius: 5%;
+    border: 3px solid #FFC13C;
+    align-items: center;
+    align-items: center;
+    margin-top: 5%;
+    display: flex;
+    margin-left: 5%;
+    background-color: #FFFFFF;
+    height: 200px;
+    width: 200px;
+    float: left;
+    text-align: center;
+    /*Define quais propriedades será utilizada na estilização*/
+    transition-property: background-color, border-radius;
+    /*Define a duração da transição*/
+    transition-duration: 2s, 1.5s;
+    /*Da um delay entre a transição, para dar uma leveza*/
+    transition-delay: 0.5s;
+    /**/
+    transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.box:hover {
+    background-color: #FFC13C;
+    text-align: center;
+    border-radius: none;
+    height: 210px;
+    width: 210px;
+}
+
+.general-title {
+    color: #D87501;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.general-title h1 {
+    font-size: 30px;
+}
+
+.pink-stroke {
+    margin: auto;
+    background-color: #FFC13C;
+    width: 100%;
+    height: 3px;
+    text-align: center;
+    margin-top: 10px;
+    border: none;
+}
+
+.contact {
+    max-width: 100%;
+    background-color: #FFFFFF;
+    position: relative;
+    min-height: 100vh;
+    color: #FFFFFF;
+}
+
+.contact .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 7% 0%;
+}
+
+.contact .general-title {
+    margin-left: 50%;
+    float: left;
+}
+
+.contact .imgContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.contact .imgContent img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*FOOTER*/
+
+footer {
+    background: #D87501;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 10px;
+    color: #FFFFFF;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 3rem;
+}
+
+.footer-content .sociais {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.footer-content .sociais li {
+    margin: 0 10px;
+}
+
+.footer-content .sociais a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.footer-content .sociais a i {
+    font-size: 1.8rem;
+}
+
+.footer-content .sociais a i:hover {
+    color: black;
+}
+
+.footer-bottom {
+    background: #b66305;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
