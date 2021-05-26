@@ -5,108 +5,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastre-se</title>
-    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <title>Cadastro</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <script src="js/cadastro.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <form id="form1" class="form1">
-            <h3>DADOS PARA LOGIN</h3>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Senha" required>
-            <input type="password" placeholder="Confirme sua senha" required>
+    <div class="contato">
+        <div class="container">
+            <div class="formulario">
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                    <div id="form1" class="form1">
+                        <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome" required minlength="4" class="input_style">
+                        <br>
+                        <br>
+                        <input type="text" name="sobrenome" class="input-padrao" autofocus="autofocus" placeholder="Sobrenome" required minlength="4" class="input_style">
+                        <br>
+                        <br>
+                        <input type="text" name="email" class="input-padrao" autofocus="autofocus" placeholder="E-mail" required minlength="4" class="input_style">
+                        <br>
+                        <br>
+                        <input type="text" name="login" class="input-padrao" placeholder="Usuário" required minlength="4" class="input_style">
+                        <br>
+                        <br>
+                        <input type="password" name="senha" class="input-padrao" placeholder="Senha" required minlength="4" class="input_style">
 
-            <div class="btn-box">
-                <button type="button" id="next1">Próximo</button>
+                        <div class="btn-box">
+                            <button type="button" id="next1">Próximo</button>
+                        </div>
+                    </div>
+                    <div id="form2" class="form2">
+                        <select name="sexo" id="id_select_sexo" required class="input_style">
+                        <option value="0" selected disabled>Sexo</option>
+                        <option value="1">Feminino</option>
+                        <option value="2">Masculino</option>
+                        <option value="3">Outro</option>
+                        </select>
+                        <select name="olhos" id="id_select_olhos" required class="input_style">
+                        <option value="0" selected disabled>Cor dos Olhos</option>
+                        <option value="1">Castanho claro</option>
+                        <option value="2">Castanho escuro</option>
+                        <option value="3">Verde</option>
+                        <option value="4">Azul</option>
+                    </select>
+                        <select name="cabelo" id="id_select_cabelos" required class="input_style">
+                        <option value="0" selected disabled>Tonalidade do cabelo</option>
+                        <option value="1">Castanho claro</option>
+                        <option value="2">Castanho escuro</option>
+                        <option value="3">Loiro</option>
+                        <option value="4">Ruivo</option>
+                        <option value="5">Preto</option>
+                    </select>
+                        <select name="subtom" id="id_select_subtom" required class="input_style">
+                        <option value="0" selected disabled>Você sabe seu subtom de pele?</option>
+                        <option value="1">Sim</option>
+                        <option value="2">Não</option>
+                    </select>
+                        <select name="coloracao" id="id_select_veias" required class="input_style">
+                        <option value="0" selected disabled>Suas veias são?</option>
+                        <option value="1">Azuladas</option>
+                        <option value="2">Esverdeadas</option>
+                        <option value="3">Ambas</option>
+                    </select>
+                        <select name="comportamentoPele" id="id_select_comportamentoPele" required class="input_style">
+                        <option value="0" selected disabled>Ao tormar sol você:</option>
+                        <option value="1">Fica Bronzeada</option>
+                        <option value="2">Fica Queimada</option>
+                        <option value="3">Ambas</option>
+                    </select>
+                        <div class="btn-box">
+                            <button type="button" id="back1">Voltar</button>
+                            <button id="btn_entrar" class="btn_entrar">Entrar</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="step-row">
+                    <div id="progress" class="progress"></div>
+                    <div class="step-colum"><small>Etapa 1</small></div>
+                    <div class="step-colum"><small>Etapa 2</small></div>
+                </div>
+
+                <img src="img/loading.gif" id="img_aguarde" style="display: none; width:100px">
+
+                <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                    Erro no cadastro
+                </div>
+
             </div>
-        </form>
-
-        <form id="form2" class="form2">
-            <h3>DADOS PESSOAIS</h3>
-            <input type="text" placeholder="Nome" required>
-            <input type="text" placeholder="Sobrenome" required>
-            <select name="" id="id_select_veias">
-                <option value="0" selected disabled>Sexo</option>
-                <option value="1">Feminino</option>
-                <option value="2">Masculino</option>
-                <option value="3">Outro</option>
-            </select>
-            <div class="btn-box">
-                <button type="button" id="back1">Voltar</button>
-                <button type="button" id="next2">Próximo</button>
-            </div>
-        </form>
-
-        <form id="form3" class="form3">
-            <h3>EM RELAÇÃO AO SEU CORPO</h3>
-            <select name="" id="id_select_veias">
-                <option value="0" selected disabled>Você sabe seu subtom de pele?</option>
-                <option value="1">Sim</option>
-                <option value="2">Não</option>
-            </select>
-            <select name="" id="id_select_veias">
-                <option value="0" selected disabled>Suas veias são?</option>
-                <option value="1">Azuladas</option>
-                <option value="2">Esverdeadas</option>
-                <option value="3">Ambas</option>
-            </select>
-            <select name="" id="id_select_veias">
-                <option value="0" selected disabled>Ao tormar sol você:</option>
-                <option value="1">Fica Bronzeada</option>
-                <option value="2">Fica Queimada</option>
-                <option value="3">Ambas</option>
-            </select>
-
-            <div class="btn-box">
-                <button type="button" id="back2">Voltar</button>
-                <button type="button">Enviar</button>
-            </div>
-        </form>
-        <div class="step-row">
-            <div id="progress" class="progress"></div>
-            <div class="step-colum"><small>Etapa 1</small></div>
-            <div class="step-colum"><small>Etapa 2</small></div>
-            <div class="step-colum"><small>Etapa 3</small></div>
         </div>
     </div>
-    <script>
-        var Form1 = document.getElementById("form1");
-        var Form2 = document.getElementById("form2");
-        var Form3 = document.getElementById("form3");
-
-        var next1 = document.getElementById("next1");
-        var next2 = document.getElementById("next2");
-        var back1 = document.getElementById("back1");
-        var back2 = document.getElementById("back2");
-
-        var progress = document.getElementById("progress");
-
-        next1.onclick = function() {
-            form1.style.left = "-450px";
-            form2.style.left = "40px";
-            progress.style.width = "280px";
-        }
-
-        back1.onclick = function() {
-            form1.style.left = "40px";
-            form2.style.left = "450px";
-            progress.style.width = "140px";
-        }
-
-        next2.onclick = function() {
-            form2.style.left = "-450px";
-            form3.style.left = "40px";
-            progress.style.width = "400px";
-        }
-
-        back2.onclick = function() {
-            form2.style.left = "40px";
-            form3.style.left = "450px";
-            progress.style.width = "280px";
-        }
-    </script>
+    <script src="js/cadastro.js"></script>
 </body>
 
 </html>

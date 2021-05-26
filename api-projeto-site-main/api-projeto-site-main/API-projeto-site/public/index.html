@@ -19,9 +19,9 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#aboutUs">Sobre nós</a></li>
-                <li><a href="#fundation">Fundadora</a></li>
+                <li><a href="#history">História</a></li>
                 <li><a href="#paletColor">Paleta de cores</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </div>
@@ -46,58 +46,99 @@
             <P class="destaque">DITE A SUA PRÓPRIA MODA!</P>
         </div>
     </section>
-    <section class="paletColor" id="paletColor">
+    <section class="history" id="history">
         <div class="container">
             <div class="general-title">
-                <h1>Paleta de cores pessoal</h1>
+                <h1>História</h1>
                 <hr class="pink-stroke" />
             </div>
-            <div class="cards">
-                <div class="box">
-                    <img class="img_palet" src="img/outono.png" alt="Paleta de cores Outono">
+            <p>O projeto surgiu das inseguranças de uma garota com o seu corpo e abusca pela beleza "ideal", enquanto se imaginava e tentava tê-lo, ela o desenhava. Essa garota logo descobriu que ela poderia ser linda e ao mesmo tempo ser ela mesma sem deixar
+                de ser fashion.</p>
+            <div class="slideshow">
+                <ul class="slider">
+                    <li>
+                        <input type="radio" id="slide1" name="slide" checked>
+                        <label for="slide1"></label>
+                        <img src="img/img_slide1.jpeg" />
+                    </li>
+                    <li>
+                        <input type="radio" id="slide2" name="slide">
+                        <label for="slide2"></label>
+                        <img src="img/img_slide2.jpeg" />
+                    </li>
+                    <li>
+                        <input type="radio" id="slide3" name="slide">
+                        <label for="slide3"></label>
+                        <img src="img/img_slide3.jpeg" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="paletColor" id="paletColor">
+        <div class="container ">
+            <div class="general-title ">
+                <h1>Paleta de cores pessoal</h1>
+                <hr class="pink-stroke " />
+            </div>
+            <div class="cards ">
+                <div class="box ">
+                    <img class="img_palet " src="img/outono.png " alt="Paleta de cores Outono ">
                 </div>
 
-                <div class="box">
-                    <img class="img_palet" src="img/primavera.png" alt="Paleta de cores Outono">
+                <div class="box ">
+                    <img class="img_palet " src="img/primavera.png " alt="Paleta de cores Outono ">
                 </div>
 
-                <div class="box">
-                    <img class="img_palet" src="img/verao.png" alt="Paleta de cores Outono">
+                <div class="box ">
+                    <img class="img_palet " src="img/verao.png " alt="Paleta de cores Outono ">
                 </div>
 
-                <div class="box">
-                    <img class="img_palet" src="img/inverno.png" alt="Paleta de cores Outono">
+                <div class="box ">
+                    <img class="img_palet " src="img/inverno.png " alt="Paleta de cores Outono ">
                 </div>
             </div>
             <br>
             <button><span></span> Descubrir Paleta de Cores Pessoal</button>
         </div>
     </section>
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="imgContent">
-                <img src="img/contact.jpg" alt="">
-            </div>
-            <div class="general-title">
-                <h1>Entre em contato conosco</h1>
-                <hr class="pink-stroke" />
-            </div>
-        </div>
-    </section>
     <footer>
-        <div class="footer-content">
+        <div class="footer-content ">
             <h3>Yuumi</h3>
-            <ul class="sociais">
-                <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                <li><a href=""><i class="fa fa-github"></i></a></li>
+            <ul class="sociais ">
+                <li><a href=" "><i class="fa fa-facebook "></i></a></li>
+                <li><a href=" "><i class="fa fa-linkedin "></i></a></li>
+                <li><a href=" "><i class="fa fa-instagram "></i></a></li>
+                <li><a href=" "><i class="fa fa-github "></i></a></li>
             </ul>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom ">
             <p>copyright &copy; 2021 Yuumi, designed by Giovanna de Melo Valentin</p>
         </div>
     </footer>
 </body>
 
 </html>
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides ");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        };
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none ";
+        }
+        x[slideIndex - 1].style.display = "block ";
+    }
+</script>

@@ -227,6 +227,111 @@ button:hover {
     margin-left: 45%;
 }
 
+.history {
+    width: 100%;
+    background-color: #D87501;
+    position: relative;
+    min-height: 100vh;
+    color: #FFFFFF;
+}
+
+.history p {
+    margin-top: 10%;
+    width: 40%;
+    float: left;
+    margin-left: 2%;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.history .general-title {
+    color: #FFFFFF;
+    margin-left: 15%;
+}
+
+.history .container {
+    padding: 8% 5%;
+}
+
+.slideshow {
+    position: relative;
+    display: flex;
+    float: right;
+    width: 50%;
+    height: 90%;
+    border-radius: 29px;
+}
+
+.slider {
+    float: right;
+    display: block;
+    height: 90%;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.slider li {
+    list-style: none;
+    position: absolute;
+}
+
+.slider img {
+    border-radius: 29px;
+    float: right;
+    height: 90%;
+    width: 100%;
+    vertical-align: top;
+}
+
+.slider input {
+    display: none;
+    border-radius: 50%;
+    flex-direction: column;
+}
+
+.slider label {
+    background-color: #0f0f0f;
+    cursor: pointer;
+    display: inline;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    z-index: 3;
+    border-radius: 50%;
+    margin-left: 40%;
+    margin-top: 130%;
+    text-align: center;
+    float: right;
+}
+
+.slider li:nth-child(1) label {
+    left: 10px;
+}
+
+.slider li:nth-child(2) label {
+    left: 40px;
+}
+
+.slider li:nth-child(3) label {
+    left: 70px;
+}
+
+.slider img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slider li input:checked~img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 3;
+}
+
+
+/*FIM HISTÓRIA*/
+
 .paletColor {
     width: 100%;
     background-color: #FFFFFF;
