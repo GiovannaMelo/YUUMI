@@ -22,12 +22,15 @@ function entrar() {
 
             resposta.json().then(json => {
 
-                sessionStorage.login_usuario_meuapp = json.login_html;
+                sessionStorage.login_usuario_meuapp = json.login;
                 sessionStorage.nome_usuario_meuapp = json.nome;
+                sessionStorage.id_usuario_meuapp = json.id;
+                window.location.href = 'publicacoes.html';
 
-                window.location.href = 'tela-usuario.html';
+                if (json.id == 7) {
+                    window.location.href = 'dashboard.html';
+                }
             });
-
         } else {
 
             console.log('Erro de login!');

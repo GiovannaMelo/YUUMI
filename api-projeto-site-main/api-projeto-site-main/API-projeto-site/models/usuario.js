@@ -68,6 +68,12 @@
 	            type: DataTypes.STRING,
 	            allowNull: false
 	        },
+	        fkPaleta: {
+	            field: 'fkPaleta',
+	            foreignKey: true,
+	            type: DataTypes.INTEGER,
+	            allowNull: false
+	        },
 	    }, {
 	        tableName: 'tb_usuario',
 	        freezeTableName: true,

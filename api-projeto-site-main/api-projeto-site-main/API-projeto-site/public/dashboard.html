@@ -23,33 +23,10 @@
 <body>
     <div class="sidebar">
         <center>
-            <br>
-            <h3>Administrador</h3>
+            <img src="img/perfil.jpg" class="profile-image" alt="">
+            <h2 style="margin-top: 15%;">Olá <b id="b_usuario"></b></h2>
         </center>
-        <a href="#" class="nav_link">
-            <i class='bx bx-grid-alt nav_icon'></i>
-            <span class="nav_name">Dashboard</span>
-        </a>
-
-        <a href="#" class="nav_link">
-            <i class='far fa-bell nav_icon'></i>
-            <span class="nav_name">Messages</span>
-        </a>
-
-        <a href="#" class="nav_link">
-            <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
-            <span class="nav_name">Analytics</span>
-        </a>
-
-        <a href="#" class="nav_link">
-            <i class='bx bx-folder nav_icon'></i>
-            <span class="nav_name">Data</span>
-        </a>
-        <a href="#" class="nav_link">
-            <i class='bx bx-log-out nav_icon'></i>
-            <span class="nav_name">Log Out</span>
-        </a>
-
+        <a href="" style="margin-left: 15%; margin-top: 140%" onclick="logoff()"> <i class="fas fa-door-open"></i><span>Logout</span></a>
     </div>
     <div class="container">
         <div class="box">
@@ -57,18 +34,18 @@
                 <h1>OIEE</h1>
             </div>
             <div class="cards">
-                <div class="chart-wrapper">
+                <div class="chart-wrapper" style="width: 100%;">
                     <canvas id="myChart" style="width: 100%;"></canvas>
                 </div>
             </div>
             <div class=" cards ">
-                <div class="chart-wrapper ">
-                    <canvas id="myChart" style="width: 100%;"></canvas>
+                <div class="chart-wrapper " style="width: 100%;">
+                    <canvas id="myChart3" style="width: 100%;"></canvas>
                 </div>
             </div>
             <div class="cards ">
-                <div class="chart-wrapper ">
-                    <canvas id="myChart" style="width: 100%;"></canvas>
+                <div class="chart-wrapper " style="width: 100%;">
+                    <canvas id="myChart4" style="width: 100%;"></canvas>
                 </div>
             </div>
         </div>
@@ -77,60 +54,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 
 </html>
-<script>
-    let ctx2 = document.getElementById('myChart2').getContext('2d');
-    let myChart = new Chart(ctx2, {
-        type: 'pie',
-        data: {
-            labels: ['Saudável', 'Abaixo do Peso', 'Obeso', 'Obesidade Grave'],
-            datasets: [{
-                data: [47, 33, 13, 7],
-                backgroundColor: [
-                    'rgba(54, 133, 235, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(255, 80, 80, 0.6)'
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(255, 80, 80, 1)'
-                ],
-
-                borderWidth: 4
-            }]
-        },
-        options: {
-            title: {
-
-                display: true,
-
-                fontSize: 20,
-
-                text: "Taxa de Obesidade",
-
-                position: 'top',
-
-                fontColor: "#fff"
-            },
-
-            legend: {
-
-                position: 'bottom',
-                labels: {
-                    fontColor: "#fff"
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-
-                }
-            }
-        }
-    });
-</script>
+<script src='js/tela-usuario.js'></script>

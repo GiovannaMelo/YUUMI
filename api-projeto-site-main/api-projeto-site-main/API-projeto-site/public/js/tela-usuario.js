@@ -1,6 +1,6 @@
-let login_usuario;
-let nome_usuario;
-let usuario;
+var login_usuario;
+var nome_usuario;
+var usuario;
 
 verificar_autenticacao();
 

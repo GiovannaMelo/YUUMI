@@ -1,6 +1,5 @@
 function publicar() {
     console.log("entrei!")
-    aguardar();
     var formulario = new URLSearchParams(new FormData(form_publicar));
     var idUsuario = sessionStorage.id_usuario_meuapp;
     fetch(`/publicacoes/publicar/${idUsuario}`, {
@@ -57,8 +56,6 @@ function obterPublicacoes() {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
                     atualizarFeed(resposta);
-
-                    finalizarAguardar();
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -85,19 +82,4 @@ function obterPublicacoesPorUsuario(idUsuario) {
         .catch(function(error) {
             console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
         });
-}
-
-function aguardar() {
-    btn_publicar.disabled = true;
-    img_aguarde.style.visibility = 'visible';
-    div_erro.style.visibility = 'hidden';
-}
-
-function finalizarAguardar(resposta) {
-    btn_publicar.disabled = false;
-    img_aguarde.style.visibility = 'hidden';
-    if (resposta) {
-        div_erro.style.visibility = 'visible';
-        div_erro.innerHTML = resposta;
-    }
 }

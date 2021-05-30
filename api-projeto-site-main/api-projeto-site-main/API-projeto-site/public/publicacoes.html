@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YUUMI</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
     <link rel='stylesheet' type='text/css' media='screen' href='css/dashboard.css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css">
-    <script src='js/publicar.js'></script>
+
 </head>
 
 <body onload="obterPublicacoes()">
+    <!--header inicio-->
+
     <div class="sidebar">
         <center>
             <img src="img/perfil.jpg" class="profile-image" alt="">
@@ -23,29 +24,87 @@
         <a href="" style="margin-bottom: 95%;"> <i class="fa fa-hashtag"></i><span>Publicações</span></a>
         <a href="" style="margin-left: 15%;" onclick="logoff()"> <i class="fas fa-door-open"></i><span>Logout</span></a>
     </div>
-    <div class="container">
-        <div class="public-post">
-            <form id="form_publicar" method="post" onsubmit="return publicar()" action="javascript:void(0)">
-                <textarea name="descricao" id="textarea_post" cols="60" rows="4" placeholder="Insira sua publicação"></textarea>
-                <br>
-                <input type="submit" id="btn_publicar" class="btn-publicar" value="Publicar">
-            </form>
-        </div>
-        <div class="general-title">
-            <h1>Publicações</h1>
-            <hr class="pink-stroke" />
-        </div>
-        <div class="feed">
-            <h1>Publicações</h1>
-            <div id="feed_container" class="container">
+    <!--header fim-->
+
+    <div class="dashboard">
+        <div class="container">
+            <div class="public-post">
+                <form id="form_publicar" method="post" onsubmit="return publicar()">
+                    <textarea name="descricao" id="output" cols="60" rows="4" placeholder="Insira sua publicação"></textarea>
+                    <br>
+                    <input type="submit" id="btn_publicar" class="btn-publicar" value="Publicar">
+                </form>
+                <div class="extra">
+                    <div id="div_erro" class="msg_erro">
+                    </div>
+                    <img src="" id="img_aguarde">
+                </div>
+            </div>
+            <div class="feed">
+                <div id="feed_container" class="container">
+                </div>
             </div>
         </div>
     </div>
 
+
+
 </body>
 
-</html>
+
 <script>
+    function publicar() {
+        console.log("entrei!")
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_publicar));
+        var idUsuario = sessionStorage.id_usuario_meuapp;
+        fetch(`/publicacoes/publicar/${idUsuario}`, {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+                obterPublicacoes();
+
+                finalizarAguardar();
+            } else {
+                console.log('Erro ao publicar!');
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function atualizarFeed(publicacoes) {
+        var feed = document.getElementById("feed_container");
+        document.getElementById("output").value = "";
+        feed.innerHTML = "";
+        for (let i = 0; i < publicacoes.length; i++) {
+            var publicacao = publicacoes[i];
+
+            var divPublicacao = document.createElement("div")
+            var divNome = document.createElement("div")
+            var divDescricao = document.createElement("div")
+
+            divNome.innerHTML = `${publicacao.nome}`;
+            divDescricao.innerHTML = `<br><br>${publicacao.descricao}`;
+
+            divPublicacao.className = "publicacao"
+            divNome.className = "nome";
+            divDescricao.className = "descricao";
+
+
+            divPublicacao.appendChild(divNome);
+            divPublicacao.appendChild(divDescricao);
+
+            feed.appendChild(divPublicacao);
+        }
+    }
+
     function obterPublicacoes() {
         aguardar();
         fetch("/publicacoes")
@@ -99,6 +158,7 @@
             div_erro.innerHTML = resposta;
         }
     }
+
+    verificar_autenticacao();
 </script>
 <script src='js/tela-usuario.js'></script>
-<script src='js/publicar.js'></script>

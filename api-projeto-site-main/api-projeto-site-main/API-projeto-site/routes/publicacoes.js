@@ -28,11 +28,11 @@ router.get('/', function(req, res, next) {
 
     let instrucaoSql = `SELECT 
     tb_usuario.nome,
-    descricao
+    descricao, datapublicacao
     FROM tb_publicacao
     INNER JOIN tb_usuario
-    ON Publicacao.fkUsuario = Usuario.id
-    ORDER BY publicacao.id DESC`;
+    ON tb_publicacao.fkUsuario = tb_usuario.id
+    ORDER BY tb_publicacao.id DESC`;
 
     sequelize.query(instrucaoSql, {
             model: Publicacao,

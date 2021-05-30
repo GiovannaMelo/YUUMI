@@ -36,9 +36,14 @@ router.post('/autenticar', function(req, res, next) {
     });
 });
 
+
+
 /* Cadastrar usuário */
-router.post('/cadastrar', function(req, res, next) {
+router.post('/cadastrar/:idPaleta', function(req, res, next) {
     console.log('Criando um usuário');
+    let fk_paleta = req.params.idPaleta;
+
+
 
     Usuario.create({
         nome: req.body.nome,
@@ -52,6 +57,7 @@ router.post('/cadastrar', function(req, res, next) {
         coloracao: req.body.coloracao,
         cabelo: req.body.cabelo,
         olhos: req.body.olhos,
+        fkPaleta: fk_paleta
 
     }).then(resultado => {
         console.log(`Registro criado: ${resultado}`)
