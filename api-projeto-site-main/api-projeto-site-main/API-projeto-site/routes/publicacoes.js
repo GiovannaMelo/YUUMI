@@ -16,7 +16,7 @@ router.post('/publicar/:idUsuario', function(req, res, next) {
         console.log("Post realizado com sucesso!!");
         res.send(resultado);
     }).catch(erro => {
-        console.log('DEU UM ERRINHO')
+        console.log('Não foi possivel realizar post')
         console.error(erro);
         res.status(500).send(erro.message);
     })
@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 
     let instrucaoSql = `SELECT 
     tb_usuario.nome,
-    descricao, datapublicacao
+    descricao
     FROM tb_publicacao
     INNER JOIN tb_usuario
     ON tb_publicacao.fkUsuario = tb_usuario.id

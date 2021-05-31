@@ -8,14 +8,13 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="css/login.css">
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
-    <script src="js/cadastro.js"></script>
 </head>
 
 <body>
     <div class="contato">
         <div class="container">
             <div class="formulario">
-                <form id="form_cadastro" method="post" action="javascript:void(0)">
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()" action="javascript:void(0)">
                     <div id="form1" class="form1">
                         <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome" id="nome" required minlength="4" class="input_style">
                         <br>
@@ -32,23 +31,23 @@
                         <input type="password" name="senha" class="input-padrao" placeholder="Senha" id="senha" required minlength="8" class="input_style">
 
                         <div class="btn-box">
-                            <button onclick="proximo()">Próximo</button>
+                            <input class="btn_form" type="button" onclick="proximo()" id="btn_proximo" value="Próximo">
                         </div>
                     </div>
                     <div id="form2" class="form2">
-                        <select name="sexo" id="id_select_sexo" required class="input_style">
+                        <select name="sexo" id="sexo" required class="input_style">
                         <option value="0" selected disabled>Sexo</option>
                         <option value="1">Feminino</option>
                         <option value="2">Masculino</option>
                         </select>
-                        <select name="olhos" id="id_select_olhos" required class="input_style">
+                        <select name="olhos" id="olhos" required class="input_style">
                         <option value="0" selected disabled>Cor dos Olhos</option>
                         <option value="1">Castanho claro</option>
                         <option value="2">Castanho escuro</option>
                         <option value="3">Verde</option>
                         <option value="4">Azul</option>
                     </select>
-                        <select name="cabelo" id="id_select_cabelos" required class="input_style">
+                        <select name="cabelo" id="cabelo" required class="input_style">
                         <option value="0" selected disabled>Tonalidade do cabelo</option>
                         <option value="1">Castanho claro</option>
                         <option value="2">Castanho escuro</option>
@@ -61,19 +60,19 @@
                         <option value="1">Sim</option>
                         <option value="2">Não</option>
                     </select>
-                        <select name="coloracao" id="id_select_veias" required class="input_style">
+                        <select name="coloracao" id="coloracao" required class="input_style">
                         <option value="0" selected disabled>Suas veias são?</option>
                         <option value="1">Azuladas</option>
                         <option value="2">Esverdeadas</option>
                     </select>
-                        <select name="comportamentoPele" id="id_select_comportamentoPele" required class="input_style">
+                        <select name="comportamentoPele" id="comportamentoPele" required class="input_style">
                         <option value="0" selected disabled>Ao tormar sol você:</option>
-                        <option value="1">Fica Bronzeada</option>
-                        <option value="2">Fica Queimada</option>
+                        <option value="1">Fica Bronzeado(a)</option>
+                        <option value="2">Fica Queimado(a)</option>
                     </select>
                         <div class="btn-box">
-                            <button onclick="anterior()">Anterior</button>
-                            <button id="btn_entrar" class="btn_entrar">Cadastrar</button>
+                            <input type="button" class="btn_form" id="btn_anterior" onclick="anterior()" value="Anterior">
+                            <input type="submit" class="btn_form" id="btn_entrar" class="btn_entrar" value="Cadastrar">
                         </div>
                     </div>
                 </form>

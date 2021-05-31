@@ -15,11 +15,46 @@ var email = document.getElementById('email');
 var login = document.getElementById('login');
 var senha = document.getElementById('senha');
 
+// chamando variaveis etapa 2
+
+var coloracao = document.getElementById('coloracao');
+var comportamentoPele = document.getElementById('comportamentoPele');
+var cabelo = document.getElementById('cabelo');
+var olhos = document.getElementById('olhos');
+
 
 function cadastrar() {
-    var id = 1;
+    var idPaleta = 0;
+
+    if (coloracao.value == 1 || comportamentoPele.value == 2) {
+        if (cabelo.value == 1) {
+            idPaleta = 3;
+        } else if (cabelo.value == 2) {
+            idPaleta = 4;
+        } else if (cabelo.value == 3) {
+            idPaleta = 3;
+        } else if (cabelo.value == 4) {
+            idPaleta = 3;
+        } else if (cabelo.value == 5) {
+            idPaleta = 4;
+        }
+    }
+    if (coloracao.value == 2 || comportamentoPele.value == 1) {
+        if (cabelo.value == 1) {
+            idPaleta = 2;
+        } else if (cabelo.value == 2) {
+            idPaleta = 1;
+        } else if (cabelo.value == 3) {
+            idPaleta = 2;
+        } else if (cabelo.value == 4) {
+            idPaleta = 2;
+        } else if (cabelo.value == 5) {
+            idPaleta = 1;
+        }
+    }
+
     var formulario = new URLSearchParams(new FormData(form_cadastro));
-    fetch(`/usuarios/cadastrar/${id}`, {
+    fetch(`/usuarios/cadastrar/${idPaleta}`, {
         method: "POST",
         body: formulario
     }).then(function(response) {
@@ -75,7 +110,7 @@ function proximo() {
             login.placeholder = 'Login';
         }, 1500);
     }
-    if (senha.value == '' || senha == undefined) {
+    if (senha.length < 8 || senha.value == '' || senha == undefined) {
         senha.value = '';
         senha.placeholder = 'A senha deve conter no minímo 8 digitos!';
         setTimeout(() => {

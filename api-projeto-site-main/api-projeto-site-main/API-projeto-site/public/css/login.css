@@ -81,6 +81,26 @@ select {
     margin: 20px auto;
     color: #D87501;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn_proximo,
+#btn_anterior,
+#btn_entrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 45px;
+    margin: 0 10px;
+    background: linear-gradient(to right, #FFC13C, #D87501);
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .container form button {

@@ -1,6 +1,8 @@
 var login_usuario;
 var nome_usuario;
 var usuario;
+var paleta_usuario;
+var paleta;
 
 verificar_autenticacao();
 
@@ -11,11 +13,25 @@ function redirecionar_login() {
 function verificar_autenticacao() {
     login_usuario = sessionStorage.login_usuario_meuapp;
     nome_usuario = sessionStorage.nome_usuario_meuapp;
+    paleta_usuario = sessionStorage.paleta_usuario_meuapp;
 
     if (login_usuario == undefined) {
         redirecionar_login();
     } else {
         b_usuario.innerHTML = nome_usuario;
+
+        if (paleta_usuario == 1) {
+            paleta = 'Verão';
+        } else if (paleta_usuario == 2) {
+            paleta = 'Primavera';
+        } else if (paleta_usuario == 3) {
+            paleta = 'Outono';
+        } else if (paleta_usuario == 4) {
+            paleta = 'Inverno';
+        }
+
+        span_paleta.innerHTML = `${paleta}`;
+
         validar_sessao();
     }
 
