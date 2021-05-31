@@ -25,6 +25,7 @@ function entrar() {
                 sessionStorage.login_usuario_meuapp = json.login;
                 sessionStorage.nome_usuario_meuapp = json.nome;
                 sessionStorage.id_usuario_meuapp = json.id;
+                sessionStorage.sexo_usuario_meuapp = json.sexo;
                 sessionStorage.paleta_usuario_meuapp = json.fkPaleta;
                 window.location.href = 'publicacoes.html';
 
